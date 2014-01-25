@@ -94,6 +94,12 @@
     <Reference Include="MySql.Data">
       <HintPath>..\packages\MySql.Data.6.6.5\lib\net40\MySql.Data.dll</HintPath>
     </Reference>
+    <Reference Include="Samson">
+      <HintPath>..\packages\Samson.1.0.0.0\lib\net45\Samson.dll</HintPath>
+    </Reference>
+    <Reference Include="Samson.Standard">
+      <HintPath>..\packages\Samson.Standard.1.0.0.0\lib\net45\Samson.Standard.dll</HintPath>
+    </Reference>
     <Reference Include="SQLCE4Umbraco">
       <HintPath>..\packages\UmbracoCms.Core.7.0.2\lib\SQLCE4Umbraco.dll</HintPath>
     </Reference>

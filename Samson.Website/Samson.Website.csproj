@@ -95,6 +95,15 @@
     <Reference Include="MySql.Data">
       <HintPath>..\packages\MySql.Data.6.6.5\lib\net40\MySql.Data.dll</HintPath>
     </Reference>
+    <Reference Include="Samson">
+      <HintPath>..\packages\Samson.1.0.0.0\lib\net45\Samson.dll</HintPath>
+    </Reference>
+    <Reference Include="Samson.Standard">
+      <HintPath>..\packages\Samson.Standard.1.0.0.0\lib\net45\Samson.Standard.dll</HintPath>
+    </Reference>
+    <Reference Include="Samson.Standard.Mvc">
+      <HintPath>..\packages\Samson.Standard.Mvc.1.0.0.0\lib\net45\Samson.Standard.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="SQLCE4Umbraco">
       <HintPath>..\packages\UmbracoCms.Core.7.0.2\lib\SQLCE4Umbraco.dll</HintPath>
     </Reference>
@@ -330,6 +339,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Samson.Model\Samson.Model.csproj">
+      <Project>{55fcd73d-1afb-4a09-8494-64aa373e1ef0}</Project>
+      <Name>Samson.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

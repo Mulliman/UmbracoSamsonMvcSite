@@ -94,6 +94,12 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Samson">
+      <HintPath>..\packages\Samson.1.0.0.0\lib\net45\Samson.dll</HintPath>
+    </Reference>
+    <Reference Include="Samson.Standard">
+      <HintPath>..\packages\Samson.Standard.1.0.0.0\lib\net45\Samson.Standard.dll</HintPath>
+    </Reference>
     <Reference Include="SQLCE4Umbraco">
       <HintPath>..\packages\UmbracoCms.Core.7.0.2\lib\SQLCE4Umbraco.dll</HintPath>
     </Reference>
@@ -183,6 +189,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DocumentTypes\Interfaces\IPage.cs" />
+    <Compile Include="DocumentTypes\Item.cs" />
+    <Compile Include="DocumentTypes\Page.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
