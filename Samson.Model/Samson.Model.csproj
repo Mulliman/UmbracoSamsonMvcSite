@@ -191,9 +191,11 @@
     <Compile Include="DocumentTypes\Interfaces\IPage.cs" />
     <Compile Include="DocumentTypes\Item.cs" />
     <Compile Include="DocumentTypes\Page.cs" />
+    <Compile Include="DocumentTypes\Website.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="FieldTypes\" />
     <Folder Include="MediaTypes\" />
   </ItemGroup>
   <ItemGroup>

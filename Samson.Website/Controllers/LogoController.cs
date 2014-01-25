@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
 using Samson.Services;
+using Samson.Standard.MediaTypes;
 using Samson.Standard.Mvc;
 using Samson.Website.Models;
 
@@ -18,7 +16,25 @@ namespace Samson.Website.Controllers
 
         public ActionResult Index()
         {
-            return View("~/Views/Partials/LogoView.cshtml", new LogoModel { Url = "http://google.com" });
+            var firstRoot = StrongContentService.GetRootNodes().First();
+
+            var siteSettingsNode = firstRoot as Samson.Model.DocumentTypes.Website;
+
+            if(siteSettingsNode == null || siteSettingsNode.LogoId == 0)
+            {
+                // No Logo settings set up.
+                return null;
+            }
+
+            var logoImage = StrongMediaService.GetMediaItem<Image>(siteSettingsNode.LogoId);
+
+            var logoModel = new LogoModel 
+            { 
+                Url =  "/",
+                Image = logoImage
+            };
+
+            return View("~/Views/Partials/LogoView.cshtml", logoModel);
         }
     }
 }
