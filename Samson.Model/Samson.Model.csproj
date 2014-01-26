@@ -192,10 +192,12 @@
     <Compile Include="DocumentTypes\Article.cs" />
     <Compile Include="DocumentTypes\BlogArticle.cs" />
     <Compile Include="DocumentTypes\BlogHub.cs" />
+    <Compile Include="DocumentTypes\ConfigurationItem.cs" />
     <Compile Include="DocumentTypes\Hub.cs" />
     <Compile Include="DocumentTypes\Interfaces\IBlogArticle.cs" />
     <Compile Include="DocumentTypes\Interfaces\IArticle.cs" />
     <Compile Include="DocumentTypes\Interfaces\IBlogHub.cs" />
+    <Compile Include="DocumentTypes\Interfaces\IConfigurationItem.cs" />
     <Compile Include="DocumentTypes\Interfaces\IHub.cs" />
     <Compile Include="DocumentTypes\Interfaces\IItem.cs" />
     <Compile Include="DocumentTypes\Interfaces\INavigationItem.cs" />
