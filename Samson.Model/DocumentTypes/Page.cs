@@ -1,13 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Samson.Model.DocumentTypes.Interfaces;
+﻿using Samson.Model.DocumentTypes.Interfaces;
+using Samson.Standard.DocumentTypes;
 
 namespace Samson.Model.DocumentTypes
 {
+    [DocumentTypeAlias("page")]
     public class Page : Item, IPage
     {
+        public string PageTitle { get; set; }
+
+        public string MainContent { get; set; }
+
+        public string NavigationTitle { get; set; }
+
+        public string NavigationClass { get; set; }
+
+        public bool ShowInNavigation { get; set; }
+
+        public bool HideFromParentListing { get; set; }
     }
 }

@@ -97,8 +97,13 @@
     <Reference Include="Samson">
       <HintPath>..\packages\Samson.1.0.0.0\lib\net45\Samson.dll</HintPath>
     </Reference>
-    <Reference Include="Samson.Standard">
-      <HintPath>..\packages\Samson.Standard.1.0.0.0\lib\net45\Samson.Standard.dll</HintPath>
+    <Reference Include="Samson.Standard, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Samson.Standard.1.0.0.1\lib\net45\Samson.Standard.dll</HintPath>
+    </Reference>
+    <Reference Include="Samson.Standard.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Samson.Standard.Mvc.1.0.0.0\lib\net45\Samson.Standard.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="SQLCE4Umbraco">
       <HintPath>..\packages\UmbracoCms.Core.7.0.2\lib\SQLCE4Umbraco.dll</HintPath>
@@ -207,7 +212,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mocks\MockImageMediaService.cs" />
+    <Compile Include="Mocks\MockWebsiteContentService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="LogoTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />
@@ -216,6 +224,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Samson.Model\Samson.Model.csproj">
+      <Project>{55fcd73d-1afb-4a09-8494-64aa373e1ef0}</Project>
+      <Name>Samson.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Samson.Website\Samson.Website.csproj">
       <Project>{57FD7C96-E8C9-4B62-ACD1-73D2B8E76001}</Project>
       <Name>Samson.Website</Name>

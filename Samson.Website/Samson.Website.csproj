@@ -98,8 +98,9 @@
     <Reference Include="Samson">
       <HintPath>..\packages\Samson.1.0.0.0\lib\net45\Samson.dll</HintPath>
     </Reference>
-    <Reference Include="Samson.Standard">
-      <HintPath>..\packages\Samson.Standard.1.0.0.0\lib\net45\Samson.Standard.dll</HintPath>
+    <Reference Include="Samson.Standard, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Samson.Standard.1.0.0.1\lib\net45\Samson.Standard.dll</HintPath>
     </Reference>
     <Reference Include="Samson.Standard.Mvc">
       <HintPath>..\packages\Samson.Standard.Mvc.1.0.0.0\lib\net45\Samson.Standard.Mvc.dll</HintPath>

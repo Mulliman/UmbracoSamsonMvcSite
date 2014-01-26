@@ -7,6 +7,7 @@ using Samson.Standard.DocumentTypes;
 
 namespace Samson.Model.DocumentTypes
 {
+    [DocumentTypeAlias("item")]
     public class Item : BasicContentItem
     {
 

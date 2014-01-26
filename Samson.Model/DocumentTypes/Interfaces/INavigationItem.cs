@@ -1,17 +1,13 @@
 ﻿namespace Samson.Model.DocumentTypes.Interfaces
 {
-    public interface IPage : IItem
+    public interface INavigationItem
     {
-        string PageTitle { get; set; }
-
-        string MainContent { get; set; }
-
         string NavigationTitle { get; set; }
 
         string NavigationClass { get; set; }
 
         bool ShowInNavigation { get; set; }
 
-        bool HideFromParentListing { get; set; }
+        string Url { get; set; }
     }
 }
