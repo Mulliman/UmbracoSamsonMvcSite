@@ -5,7 +5,7 @@ using Samson.Standard.DocumentTypes;
 
 namespace Samson.Model.DocumentTypes
 {
-    [DocumentTypeAlias("article")]
+    [DocumentTypeAlias("Article")]
     public class Article : Page, IArticle
     {
         public string Summary { get; set; }

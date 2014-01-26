@@ -3,7 +3,7 @@ using Samson.Standard.DocumentTypes;
 
 namespace Samson.Model.DocumentTypes
 {
-    [DocumentTypeAlias("page")]
+    [DocumentTypeAlias("Page")]
     public class Page : Item, IPage
     {
         public string PageTitle { get; set; }

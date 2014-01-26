@@ -191,14 +191,19 @@
   <ItemGroup>
     <Compile Include="DocumentTypes\Article.cs" />
     <Compile Include="DocumentTypes\BlogArticle.cs" />
+    <Compile Include="DocumentTypes\BlogHub.cs" />
+    <Compile Include="DocumentTypes\Hub.cs" />
     <Compile Include="DocumentTypes\Interfaces\IBlogArticle.cs" />
     <Compile Include="DocumentTypes\Interfaces\IArticle.cs" />
+    <Compile Include="DocumentTypes\Interfaces\IBlogHub.cs" />
+    <Compile Include="DocumentTypes\Interfaces\IHub.cs" />
     <Compile Include="DocumentTypes\Interfaces\IItem.cs" />
     <Compile Include="DocumentTypes\Interfaces\INavigationItem.cs" />
     <Compile Include="DocumentTypes\Interfaces\IPage.cs" />
     <Compile Include="DocumentTypes\Item.cs" />
     <Compile Include="DocumentTypes\Page.cs" />
     <Compile Include="DocumentTypes\Website.cs" />
+    <Compile Include="Options\SortingOption.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

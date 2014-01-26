@@ -4,7 +4,7 @@ using Samson.Standard.DocumentTypes;
 
 namespace Samson.Model.DocumentTypes
 {
-    [DocumentTypeAlias("blogArticle")]
+    [DocumentTypeAlias("BlogArticle")]
     public class BlogArticle : Article, IBlogArticle
     {
         public bool AllowNewComments { get; set; }
