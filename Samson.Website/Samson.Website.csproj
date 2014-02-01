@@ -232,6 +232,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Api\ArticlesController.cs" />
     <Compile Include="Controllers\ArticlesController.cs" />
     <Compile Include="Controllers\LogoController.cs" />
     <Compile Include="Controllers\NavigationController.cs" />
@@ -241,6 +242,7 @@
     <Compile Include="Models\ArticlesModel.cs" />
     <Compile Include="Models\LogoModel.cs" />
     <Compile Include="Models\NavigationModel.cs" />
+    <Compile Include="Models\PartialModels\Article.cs" />
     <Compile Include="Models\PartialModels\NavigationItem.cs" />
     <Compile Include="NinjectModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,4 +1,5 @@
-﻿using Samson.Model.DocumentTypes.Interfaces;
+﻿using System;
+using Samson.Model.DocumentTypes.Interfaces;
 using Samson.Standard.DocumentTypes;
 
 namespace Samson.Model.DocumentTypes

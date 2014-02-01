@@ -1,14 +1,14 @@
 ﻿using System.Linq;
-using System.Web.Mvc;
+using System.Web.Http;
 using Samson.Model.DocumentTypes.Interfaces;
 using Samson.Model.Repositories.Interfaces;
 using Samson.Website.Models;
 using Samson.Website.Models.PartialModels;
-using Umbraco.Web.Mvc;
+using Umbraco.Web.WebApi;
 
-namespace Samson.Website.Controllers
+namespace Samson.Website.Api
 {
-    public class ArticlesController : SurfaceController
+    public class ArticlesController : UmbracoApiController
     {
         private readonly IArticlesRepository _articlesRepository;
 
@@ -17,7 +17,8 @@ namespace Samson.Website.Controllers
             _articlesRepository = repo;
         }
 
-        public ActionResult ShowAllArticles()
+        [HttpGet]
+        public ArticlesModel Index()
         {
             var articles = _articlesRepository.GetAllArticles();
 
@@ -29,7 +30,7 @@ namespace Samson.Website.Controllers
                 Articles = articleModels
             };
 
-            return View("~/Views/Partials/ArticlesListingView.cshtml", model);
+            return model;
         }
     }
 }
