@@ -1,10 +1,10 @@
-﻿using Samson.Standard.MediaTypes;
+﻿using Samson.MediaTypes;
 
 namespace Samson.Website.Models
 {
     public class LogoModel
     {
-        public Image Image { get; set; }
+        public IImage Image { get; set; }
 
         public string Url { get; set; }
     }
