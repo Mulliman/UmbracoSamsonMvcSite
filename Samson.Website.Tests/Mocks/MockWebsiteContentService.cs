@@ -88,5 +88,26 @@ namespace Samson.Website.Tests.Mocks
             };
 
         }
+
+
+        public IEnumerable<T> GetDescendantNodes<T>(int parentId) where T : class, DocumentTypes.IBasicContentItem
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<DocumentTypes.IBasicContentItem> GetDescendantNodes(int parentId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<T> GetDescendantNodes<T>(DocumentTypes.IBasicContentItem parent) where T : class, DocumentTypes.IBasicContentItem
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<DocumentTypes.IBasicContentItem> GetDescendantNodes(DocumentTypes.IBasicContentItem parent)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
