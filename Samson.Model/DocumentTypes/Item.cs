@@ -17,5 +17,10 @@ namespace Samson.Model.DocumentTypes
         {
             return strings.FirstOrDefault(s => !string.IsNullOrWhiteSpace(s));
         }
+
+        protected DateTime GetFirstNonDefaultValue(params DateTime[] dateTimes)
+        {
+            return dateTimes.FirstOrDefault(d => d != default(DateTime));
+        }
     }
 }

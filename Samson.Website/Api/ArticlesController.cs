@@ -17,6 +17,7 @@ namespace Samson.Website.Api
             _articlesRepository = repo;
         }
 
+        [System.Web.Http.AcceptVerbs("GET")]
         [HttpGet]
         public ArticlesModel Index()
         {

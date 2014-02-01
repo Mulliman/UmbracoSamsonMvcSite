@@ -12,8 +12,11 @@ namespace Samson.Model.DocumentTypes
         {
             Summary = GetPropertyValue<string>("summary");
             ArticleImageId = GetPropertyValue<int>("articleImageId");
-            DisplayDateTime = GetPropertyValue<DateTime>("displayDateTime");
-
+            DisplayDateTime = GetFirstNonDefaultValue(
+                    GetPropertyValue<DateTime>("displayDateTime"),
+                    CreateDate
+                );
+                
             var tags = GetPropertyValue<string>("tags");
             
             Tags = !string.IsNullOrWhiteSpace(tags) && tags.Contains(",")
