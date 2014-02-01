@@ -1,19 +1,4 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<html>
-    <head>
-        <title>Samson</title>
-    </head>
-    <body>
-        
-        @Umbraco.RenderMacro("Logo")
-	
-		@Umbraco.RenderMacro("PrimaryNavigation")
-    
-        @Umbraco.RenderMacro("ArticlesListing")
-
-    </body>
-</html>

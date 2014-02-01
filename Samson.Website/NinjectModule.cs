@@ -16,6 +16,7 @@ namespace Samson.Website
 
             // Repositories
             Bind<IArticlesRepository>().To<ArticlesRepository>();
+            Bind<IBlogRepository>().To<BlogRepository>();
 
             // Services
             Bind<INavigationService>().To<NavigationService>();

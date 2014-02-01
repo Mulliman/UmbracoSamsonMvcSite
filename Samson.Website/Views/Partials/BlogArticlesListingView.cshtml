@@ -1,0 +1,21 @@
+﻿@model Samson.Website.Models.BlogArticlesModel
+
+@if (Model.BlogArticles != null && Model.BlogArticles.Any())
+{ 
+    <ul>
+        @foreach(var article in Model.BlogArticles)
+        {
+            <li>
+                <h3>
+                    <a href="@article.Url">@article.NavigationTitle</a>
+                </h3>
+                <p>
+                    @article.Summary
+                </p>
+                <p>
+                    <a href="@article.Url">Click here to read more</a>
+                </p>
+            </li>
+        }
+    </ul>
+}

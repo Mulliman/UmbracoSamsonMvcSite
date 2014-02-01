@@ -1,0 +1,21 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+<html>
+    <head>
+        <title>Samson</title>
+
+        @RenderSection("head", false)
+    </head>
+    <body>
+        
+        @Umbraco.RenderMacro("Logo")
+    
+        @Umbraco.RenderMacro("PrimaryNavigation")
+    
+        @Umbraco.RenderMacro("ArticlesListing")
+
+        @RenderBody()
+    
+        @RenderSection("foot", false)
+    </body>
+</html>

@@ -17,10 +17,6 @@ namespace Samson.Website.Models.PartialModels
 
         public string NavigationTitle { get; set; }
 
-        public string NavigationClass { get; set; }
-
-        public bool ShowInNavigation { get; set; }
-
         public bool HideFromParentListing { get; set; }
 
         public string Summary { get; set; }

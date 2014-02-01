@@ -1,0 +1,7 @@
+@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+@{
+    var currentPageId = Model.Content.Id;
+}
+
+@Html.Action("GetAllBlogArticles", "Blog", new { currentPageId })

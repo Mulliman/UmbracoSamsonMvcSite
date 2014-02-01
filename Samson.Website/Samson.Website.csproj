@@ -234,15 +234,18 @@
   <ItemGroup>
     <Compile Include="Api\ArticlesController.cs" />
     <Compile Include="Controllers\ArticlesController.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\LogoController.cs" />
     <Compile Include="Controllers\NavigationController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ArticlesModel.cs" />
+    <Compile Include="Models\BlogArticlesModel.cs" />
     <Compile Include="Models\LogoModel.cs" />
     <Compile Include="Models\NavigationModel.cs" />
     <Compile Include="Models\PartialModels\Article.cs" />
+    <Compile Include="Models\PartialModels\BlogArticle.cs" />
     <Compile Include="Models\PartialModels\NavigationItem.cs" />
     <Compile Include="NinjectModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -396,6 +399,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\MacroPartials\PrimaryNavigation.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Partials\BlogArticlesListingView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\MacroPartials\BlogListing.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
