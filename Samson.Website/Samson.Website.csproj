@@ -234,13 +234,17 @@
   <ItemGroup>
     <Compile Include="Controllers\ArticlesController.cs" />
     <Compile Include="Controllers\LogoController.cs" />
+    <Compile Include="Controllers\NavigationController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ArticlesModel.cs" />
     <Compile Include="Models\LogoModel.cs" />
+    <Compile Include="Models\NavigationModel.cs" />
+    <Compile Include="Models\PartialModels\NavigationItem.cs" />
     <Compile Include="NinjectModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SamsonViewEngine.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -384,6 +388,12 @@
     <Content Include="Views\Home.cshtml" />
     <Content Include="Views\Hub.cshtml" />
     <Content Include="Views\Page.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Partials\PrimaryNavigationView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\MacroPartials\PrimaryNavigation.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -2,7 +2,7 @@
 {
     public interface IHub
     {
-        bool ShowListing { get; set; }
+        bool HideListing { get; set; }
 
         bool UsePaging { get; set; }
 

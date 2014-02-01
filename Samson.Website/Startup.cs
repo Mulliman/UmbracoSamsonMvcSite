@@ -22,13 +22,13 @@ namespace Samson.Website
             SamsonContext.Current.MediaTypesProvider = new AttributeMediaTypeProvider(assembly);
             SamsonContext.Current.StrongMediaService = new StrongMediaService();
 
-           // ControllerBuilder.Current.SetControllerFactory(
-           //     new Samson.Standard.Mvc.StandardSamsonControllerFactory()
-           //);
+            // ControllerBuilder.Current.SetControllerFactory(
+            //     new Samson.Standard.Mvc.StandardSamsonControllerFactory()
+            //);
 
             ControllerBuilder.Current.SetControllerFactory(
                 new Samson.Mvc.Ninject.NinjectControllerFactory(new StandardKernel(new NinjectModule()))
-           );
+            );
         }
     }
 }

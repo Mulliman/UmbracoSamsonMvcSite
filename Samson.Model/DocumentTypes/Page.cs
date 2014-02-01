@@ -10,7 +10,12 @@ namespace Samson.Model.DocumentTypes
         {
             PageTitle = GetPropertyValue<string>("pageTitle");
             MainContent = GetPropertyValue<string>("mainContent");
-            NavigationTitle = GetPropertyValue<string>("navigationTitle");
+
+            NavigationTitle = GetFirstNonEmptyValue(
+                GetPropertyValue<string>("navigationTitle"),
+                Name
+            );
+
             NavigationClass = GetPropertyValue<string>("navigationClass");
             ShowInNavigation = GetPropertyValue<bool>("showInNavigation");
             HideFromParentListing = GetPropertyValue<bool>("hideFromParentListing");

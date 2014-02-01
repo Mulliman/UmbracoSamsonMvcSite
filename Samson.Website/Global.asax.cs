@@ -19,6 +19,9 @@ namespace Samson.Website
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            // MVC stuff
+            ViewEngines.Engines.Add(new SamsonViewEngine()); 
         }
     }
 }

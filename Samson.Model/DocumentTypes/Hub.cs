@@ -8,14 +8,14 @@ namespace Samson.Model.DocumentTypes
     {
         public override void SetCustomFields()
         {
-            ShowListing = GetPropertyValue<bool>("showListing");
+            HideListing = GetPropertyValue<bool>("hideListing");
             UsePaging = GetPropertyValue<bool>("usePaging");
             AmountPerPage = GetPropertyValue<int>("amountPerPage");
 
             base.SetCustomFields();
         }
 
-        public bool ShowListing { get; set; }
+        public bool HideListing { get; set; }
 
         public bool UsePaging { get; set; }
 
