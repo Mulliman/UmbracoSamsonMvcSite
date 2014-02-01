@@ -6,6 +6,18 @@ namespace Samson.Model.DocumentTypes
     [DocumentTypeAlias("Page")]
     public class Page : Item, IPage
     {
+        public override void SetCustomFields()
+        {
+            PageTitle = GetPropertyValue<string>("pageTitle");
+            MainContent = GetPropertyValue<string>("mainContent");
+            NavigationTitle = GetPropertyValue<string>("navigationTitle");
+            NavigationClass = GetPropertyValue<string>("navigationClass");
+            ShowInNavigation = GetPropertyValue<bool>("showInNavigation");
+            HideFromParentListing = GetPropertyValue<bool>("hideFromParentListing");
+
+            base.SetCustomFields();
+        }
+
         public string PageTitle { get; set; }
 
         public string MainContent { get; set; }

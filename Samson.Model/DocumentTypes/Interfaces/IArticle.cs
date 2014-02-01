@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 namespace Samson.Model.DocumentTypes.Interfaces
 {
-    public interface IArticle
+    public interface IArticle : IPage
     {
         string PageTitle { get; set; }
 

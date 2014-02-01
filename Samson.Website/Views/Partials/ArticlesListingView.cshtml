@@ -1,0 +1,11 @@
+﻿@model Samson.Website.Models.ArticlesModel
+
+@if (Model.Articles != null && Model.Articles.Any())
+{ 
+    <ul>
+        @foreach(var article in Model.Articles)
+        {
+            <li><a href="@article.Url">@article.NavigationTitle</a></li>
+        }
+    </ul>
+}

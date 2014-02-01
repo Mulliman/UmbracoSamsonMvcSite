@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using System.Web.Mvc;
+using Ninject;
 using Samson.Standard;
 using Samson.Standard.DocumentTypes;
 using Samson.Standard.MediaTypes;
@@ -21,8 +22,12 @@ namespace Samson.Website
             SamsonContext.Current.MediaTypesProvider = new AttributeMediaTypeProvider(assembly);
             SamsonContext.Current.StrongMediaService = new StrongMediaService();
 
+           // ControllerBuilder.Current.SetControllerFactory(
+           //     new Samson.Standard.Mvc.StandardSamsonControllerFactory()
+           //);
+
             ControllerBuilder.Current.SetControllerFactory(
-                new Samson.Standard.Mvc.StandardSamsonControllerFactory()
+                new Samson.Mvc.Ninject.NinjectControllerFactory(new StandardKernel(new NinjectModule()))
            );
         }
     }

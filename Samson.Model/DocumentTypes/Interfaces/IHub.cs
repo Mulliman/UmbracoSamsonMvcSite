@@ -1,6 +1,4 @@
-﻿using Samson.Model.Options;
-
-namespace Samson.Model.DocumentTypes.Interfaces
+﻿namespace Samson.Model.DocumentTypes.Interfaces
 {
     public interface IHub
     {
@@ -9,7 +7,5 @@ namespace Samson.Model.DocumentTypes.Interfaces
         bool UsePaging { get; set; }
 
         int AmountPerPage { get; set; }
-
-        SortingOption SortingOption { get; set; }
     }
 }
