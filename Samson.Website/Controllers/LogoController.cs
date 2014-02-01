@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
+using Samson.MediaTypes;
 using Samson.Services;
 using Samson.Standard.MediaTypes;
 using Samson.Standard.Mvc;
@@ -26,7 +27,7 @@ namespace Samson.Website.Controllers
                 return null;
             }
 
-            var logoImage = StrongMediaService.GetMediaItem<Image>(siteSettingsNode.LogoId);
+            var logoImage = StrongMediaService.GetMediaItem<IImage>(siteSettingsNode.LogoId);
 
             var logoModel = new LogoModel 
             { 
