@@ -9,5 +9,7 @@ namespace Samson.Website.Models
     public class BlogArticlesModel
     {
         public IEnumerable<BlogArticle> BlogArticles { get; set; }
+
+        public bool ShowChildListing { get; set; }
     }
 }

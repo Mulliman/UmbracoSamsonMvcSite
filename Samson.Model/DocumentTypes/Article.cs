@@ -12,6 +12,7 @@ namespace Samson.Model.DocumentTypes
         {
             Summary = GetPropertyValue<string>("summary");
             ArticleImageId = GetPropertyValue<int>("articleImageId");
+
             DisplayDateTime = GetFirstNonDefaultValue(
                     GetPropertyValue<DateTime>("displayDateTime"),
                     CreateDate
