@@ -19,7 +19,7 @@ namespace Samson.Model.DocumentTypes
 
             NavigationClass = GetPropertyValue<string>("navigationClass");
             ShowInNavigation = GetPropertyValue<bool>("showInNavigation");
-            HideFromParentListing = GetPropertyValue<bool>("hideFromParentListing");
+            HideFromParentListing = GetPropertyValue<bool>("hideFromParent");
 
             base.SetCustomFields();
         }

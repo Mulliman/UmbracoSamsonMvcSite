@@ -193,6 +193,7 @@
     <Compile Include="DocumentTypes\BlogArticle.cs" />
     <Compile Include="DocumentTypes\BlogHub.cs" />
     <Compile Include="DocumentTypes\ConfigurationItem.cs" />
+    <Compile Include="DocumentTypes\ContentPage.cs" />
     <Compile Include="DocumentTypes\Hub.cs" />
     <Compile Include="DocumentTypes\Interfaces\IBlogArticle.cs" />
     <Compile Include="DocumentTypes\Interfaces\IArticle.cs" />
@@ -201,6 +202,7 @@
     <Compile Include="DocumentTypes\Interfaces\IDateSortable.cs" />
     <Compile Include="DocumentTypes\Interfaces\IHub.cs" />
     <Compile Include="DocumentTypes\Interfaces\IItem.cs" />
+    <Compile Include="DocumentTypes\Interfaces\IListablePage.cs" />
     <Compile Include="DocumentTypes\Interfaces\INavigationItem.cs" />
     <Compile Include="DocumentTypes\Interfaces\IPage.cs" />
     <Compile Include="DocumentTypes\Item.cs" />

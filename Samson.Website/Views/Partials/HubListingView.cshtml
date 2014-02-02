@@ -1,0 +1,15 @@
+﻿@model Samson.Website.Models.HubModel
+
+@if (Model.Pages != null && Model.Pages.Any())
+{ 
+    <ul>
+        @foreach(var page in Model.Pages)
+        {
+            <li>
+                <h3><a href="@page.Url">@page.NavigationTitle</a></h3>
+
+                <p>@page.Summary</p>
+            </li> 
+        }
+    </ul>
+}
