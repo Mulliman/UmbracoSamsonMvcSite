@@ -211,8 +211,6 @@
     <Compile Include="Repositories\BlogRepository.cs" />
     <Compile Include="Repositories\Interfaces\IArticlesRepository.cs" />
     <Compile Include="Repositories\Interfaces\IBlogRepository.cs" />
-    <Compile Include="Services\Interfaces\INavigationService.cs" />
-    <Compile Include="Services\NavigationService.cs" />
     <Compile Include="Sorting\DateDescendingSorter.cs" />
     <Compile Include="Sorting\DateAscendingSorter.cs" />
     <Compile Include="Sorting\DefaultSorter.cs" />
@@ -222,6 +220,7 @@
   <ItemGroup>
     <Folder Include="FieldTypes\" />
     <Folder Include="MediaTypes\" />
+    <Folder Include="Services\Interfaces\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

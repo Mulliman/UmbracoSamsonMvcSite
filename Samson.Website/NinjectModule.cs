@@ -1,7 +1,5 @@
 ﻿using Samson.Model.Repositories;
 using Samson.Model.Repositories.Interfaces;
-using Samson.Model.Services;
-using Samson.Model.Services.Interfaces;
 using Samson.Services;
 using Samson.Standard.Services;
 
@@ -19,7 +17,6 @@ namespace Samson.Website
             Bind<IBlogRepository>().To<BlogRepository>();
 
             // Services
-            Bind<INavigationService>().To<NavigationService>();
         }
     }
 }

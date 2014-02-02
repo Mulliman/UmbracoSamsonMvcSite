@@ -1,0 +1,19 @@
+﻿@model Samson.Website.Models.NavigationModel
+
+Child nav
+
+<nav>
+    @if (Model.NavigationItems.Any())
+    { 
+        <ul>
+            @foreach(var item in Model.NavigationItems)
+            {
+                <li class="nav-item @item.NavigationClass">
+                    <a href="@item.Url">
+                        @item.NavigationTitle
+                    </a>
+                </li>
+            }
+        </ul>
+    }
+</nav>
