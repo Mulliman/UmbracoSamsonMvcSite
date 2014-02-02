@@ -25,7 +25,7 @@ namespace Samson.Website.Controllers
         {
             var root = _contentService.GetRootNodes().First();
 
-            var navPages =  _contentService.GetChildNodes<Page>(root).Where(p => p.ShowInNavigation);
+            var navPages =  _contentService.GetChildNodes<IPage>(root).Where(p => p.ShowInNavigation);
 
             var navModel = new NavigationModel
             {
@@ -39,7 +39,7 @@ namespace Samson.Website.Controllers
         {
             var current = _contentService.GetCurrentNode();
 
-            var navPages = _contentService.GetChildNodes<Page>(current).Where(p => !p.HideFromParentListing);
+            var navPages = _contentService.GetChildNodes<IPage>(current).Where(p => !p.HideFromParentListing);
 
             var navModel = new NavigationModel
             {

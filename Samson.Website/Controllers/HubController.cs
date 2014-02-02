@@ -20,7 +20,7 @@ namespace Samson.Website.Controllers
 
         public ActionResult ShowHubListing()
         {
-            var hub = _strongContentService.GetCurrentNode<Hub>();
+            var hub = _strongContentService.GetCurrentNode<IHub>();
 
             if(hub == null || hub.HideListing)
             {
@@ -28,7 +28,7 @@ namespace Samson.Website.Controllers
                 return null;
             }
 
-            var pages = _strongContentService.GetChildNodes<ContentPage>(hub).Where(p => !p.HideFromParentListing);
+            var pages = _strongContentService.GetChildNodes<IListablePage>(hub).Where(p => !p.HideFromParentListing);
 
             var map = AutoMapper.Mapper.CreateMap<IListablePage, ListingItem>();
             var pageModels = pages.Select(AutoMapper.Mapper.Map<ListingItem>);

@@ -25,7 +25,7 @@ namespace Samson.Website.Controllers
 
         public ActionResult ShowBlogArticlesListing()
         {
-            var blogHub = _strongContentService.GetCurrentNode<Samson.Model.DocumentTypes.BlogHub>();
+            var blogHub = _strongContentService.GetCurrentNode<IBlogHub>();
 
             if(blogHub == null || blogHub.HideListing)
             {

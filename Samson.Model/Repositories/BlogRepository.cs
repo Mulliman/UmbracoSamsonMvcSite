@@ -20,7 +20,7 @@ namespace Samson.Model.Repositories
         {
             var root = _strongContentService.GetRootNodes().First();
 
-            return _strongContentService.GetDescendantNodes<BlogArticle>(root);
+            return _strongContentService.GetDescendantNodes<IBlogArticle>(root);
         }
 
         public IEnumerable<IBlogArticle> GetAllBlogArticles(Sorting.Interfaces.ISorter sorter)
@@ -32,7 +32,7 @@ namespace Samson.Model.Repositories
 
         public IEnumerable<IBlogArticle> GetAllBlogArticles(int parentNodeId)
         {
-            return _strongContentService.GetDescendantNodes<BlogArticle>(parentNodeId);
+            return _strongContentService.GetDescendantNodes<IBlogArticle>(parentNodeId);
         }
 
         public IEnumerable<IBlogArticle> GetAllBlogArticles(int parentNodeId, Sorting.Interfaces.ISorter sorter)

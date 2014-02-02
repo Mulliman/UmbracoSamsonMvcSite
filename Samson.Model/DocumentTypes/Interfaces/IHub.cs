@@ -1,6 +1,6 @@
 ﻿namespace Samson.Model.DocumentTypes.Interfaces
 {
-    public interface IHub
+    public interface IHub : IPage
     {
         bool HideListing { get; set; }
 
