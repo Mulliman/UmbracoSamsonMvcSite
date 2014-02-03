@@ -33,5 +33,23 @@ namespace Samson.Website.Api
 
             return model;
         }
+
+        [System.Web.Http.AcceptVerbs("GET")]
+        [HttpGet]
+        public BlogArticlesModel Index(string tag)
+        {
+            var articles = _blogRepository.GetAllBlogArticlesWithTag(tag);
+
+            var map = AutoMapper.Mapper.CreateMap<IBlogArticle, BlogArticle>();
+            var articleModels = articles.Select(AutoMapper.Mapper.Map<BlogArticle>);
+
+            var model = new BlogArticlesWithTagModel
+            {
+                BlogArticles = articleModels,
+                Tag = tag
+            };
+
+            return model;
+        }
     }
 }
