@@ -112,9 +112,18 @@ namespace Samson.Model.Repositories
 
         public IEnumerable<IBlogArticle> GetAllBlogArticlesWithTag(string tag)
         {
-            var nodes = GetAllBlogArticles();
+            string cachingKey = "Blog.ArticlesWithTag." + tag;
 
-            return nodes.Where(b => b.Tags.Contains(tag));
+            if (_cache.Contains(cachingKey))
+            {
+                return _cache.Retrieve<IEnumerable<IBlogArticle>>(cachingKey);
+            }
+
+            var nodes = GetAllBlogArticles();
+            nodes = nodes.Where(b => b.Tags.Contains(tag));
+
+            _cache.Add(cachingKey, nodes);
+            return nodes;
         }
 
         public IEnumerable<IBlogArticle> GetAllBlogArticlesWithTag(string tag, Sorting.Interfaces.ISorter sorter)
