@@ -1,0 +1,23 @@
+﻿@model Samson.Website.Models.BlogArticlesWithTagModel
+
+@if (Model.BlogArticles != null && Model.BlogArticles.Any())
+{ 
+    <h3>Blog articles tagged with @Model.Tag</h3>
+    
+    <ul>
+        @foreach(var article in Model.BlogArticles)
+        {
+            <li>
+                <h3>
+                    <a href="@article.Url">@article.NavigationTitle</a>
+                </h3>
+                <p>
+                    @article.Summary
+                </p>
+                <p>
+                    <a href="@article.Url">Click here to read more</a>
+                </p>
+            </li>
+        }
+    </ul>
+}

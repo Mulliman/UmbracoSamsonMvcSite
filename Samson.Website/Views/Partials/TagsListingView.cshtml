@@ -8,7 +8,7 @@
         @foreach(var item in Model.Tags)
         {
             <li>
-                <a href="@(Model.HubUrlWithTagQueryString + item)">
+                <a href="@(Model.HubUrlWithTagQueryString + Server.UrlEncode(item))">
                     @item
                 </a>
             </li>

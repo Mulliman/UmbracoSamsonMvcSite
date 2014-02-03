@@ -48,6 +48,30 @@ namespace Samson.Website.Controllers
             return View("~/Views/Partials/BlogArticlesListingView.cshtml", model);
         }
 
+        public ActionResult ShowBlogArticlesWithTagListing(string tag)
+        {
+            var blogHub = _strongContentService.GetCurrentNode<IBlogHub>();
+
+            if (blogHub == null || blogHub.HideListing)
+            {
+                // This is not a blog hub, so can't have this listing.
+                return null;
+            }
+
+            var articles = _blogRepository.GetAllBlogArticlesWithTag(tag, blogHub.Id);
+
+            var map = AutoMapper.Mapper.CreateMap<IBlogArticle, BlogArticle>();
+            var articleModels = articles.Select(AutoMapper.Mapper.Map<BlogArticle>);
+
+            var model = new BlogArticlesWithTagModel
+            {
+                BlogArticles = articleModels,
+                Tag = tag
+            };
+
+            return View("~/Views/Partials/BlogArticlesWithTagListingView.cshtml", model);
+        }
+
         public ActionResult ShowBlogTagsListing()
         {
             var blogHub = _blogRepository.GetMainBlogHub();

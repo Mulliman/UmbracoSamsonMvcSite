@@ -18,8 +18,8 @@ namespace Samson.Model.DocumentTypes
 
             var tags = GetPropertyValue<string>("tags");
 
-            Tags = !string.IsNullOrWhiteSpace(tags) && tags.Contains(",")
-                ? tags.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries)
+            Tags = !string.IsNullOrWhiteSpace(tags)
+                ? GetTags(tags)
                 : new string[0];
 
             base.SetCustomFields();
@@ -30,5 +30,12 @@ namespace Samson.Model.DocumentTypes
         public int ArticleImageId { get; set; }
 
         public IList<string> Tags { get; set; }
+
+        private IList<string> GetTags(string tags)
+        {
+            return tags.Contains(",")
+                ? tags.Split(new[] { "," }, StringSplitOptions.RemoveEmptyEntries)
+                : new string[] { tags };
+        }
     }
 }

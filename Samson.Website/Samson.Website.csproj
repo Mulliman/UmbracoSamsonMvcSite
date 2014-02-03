@@ -245,6 +245,7 @@
     </Compile>
     <Compile Include="Models\ArticlesModel.cs" />
     <Compile Include="Models\BlogArticlesModel.cs" />
+    <Compile Include="Models\BlogArticlesWithTagModel.cs" />
     <Compile Include="Models\HubModel.cs" />
     <Compile Include="Models\LogoModel.cs" />
     <Compile Include="Models\NavigationModel.cs" />
@@ -435,6 +436,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\MacroPartials\TagsListing.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Partials\BlogArticlesWithTagListingView.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

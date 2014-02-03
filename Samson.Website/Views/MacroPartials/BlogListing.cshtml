@@ -1,3 +1,13 @@
 @inherits Umbraco.Web.Macros.PartialViewMacroPage
 
+@{ var tag = HttpContext.Current.Request.QueryString["tag"]; }
+@if (tag != null)
+{
+    tag = Server.UrlDecode(tag);
+    
+    // Show the articles with the selected tag.
+    @Html.Action("ShowBlogArticlesWithTagListing", "Blog", new { tag })
+    return;
+}
+
 @Html.Action("ShowBlogArticlesListing", "Blog")
