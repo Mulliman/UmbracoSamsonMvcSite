@@ -1,4 +1,5 @@
-﻿using Samson.Model.Repositories;
+﻿using Samson.Model.Caching;
+using Samson.Model.Repositories;
 using Samson.Model.Repositories.Interfaces;
 using Samson.Services;
 using Samson.Standard.Services;
@@ -11,6 +12,7 @@ namespace Samson.Website
         {
             Bind<IStrongContentService>().To<StrongContentService>();
             Bind<IStrongMediaService>().To<StrongMediaService>();
+            Bind<ICache>().To<SlidingHttpCache>().WithConstructorArgument("expirationMinutes", 120);
 
             // Repositories
             Bind<IArticlesRepository>().To<ArticlesRepository>();
