@@ -10,6 +10,8 @@ namespace Samson.Model.Repositories.Interfaces
 {
     public interface IBlogRepository
     {
+        IBlogHub GetMainBlogHub();
+
         IEnumerable<IBlogArticle> GetAllBlogArticles();
 
         IEnumerable<IBlogArticle> GetAllBlogArticles(ISorter sorter);
@@ -25,6 +27,10 @@ namespace Samson.Model.Repositories.Interfaces
         IEnumerable<IBlogArticle> GetPageOfBlogArticles(int parentNodeId, int startIndex, int pageSize);
 
         IEnumerable<IBlogArticle> GetPageOfBlogArticles(int parentNodeId, int startIndex, int pageSize, ISorter sorter);
+
+        IEnumerable<string> GetAllTags();
+
+        IEnumerable<string> GetAllTags(int parentNodeId);
 
         IEnumerable<IBlogArticle> GetAllBlogArticlesWithTag(string tag);
 

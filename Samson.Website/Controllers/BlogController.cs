@@ -14,12 +14,14 @@ namespace Samson.Website.Controllers
 {
     public class BlogController : SurfaceController
     {
-        private readonly IBlogRepository _articlesRepository;
+        private const string TagSearchQueryStringKey = "tag";
+
+        private readonly IBlogRepository _blogRepository;
         private readonly IStrongContentService _strongContentService;
 
         public BlogController(IBlogRepository repo, IStrongContentService contentService)
         {
-            _articlesRepository = repo;
+            _blogRepository = repo;
             _strongContentService = contentService;
         }
 
@@ -33,7 +35,7 @@ namespace Samson.Website.Controllers
                 return null;
             }
 
-            var articles = _articlesRepository.GetAllBlogArticles(blogHub.Id);
+            var articles = _blogRepository.GetAllBlogArticles(blogHub.Id);
 
             var map = AutoMapper.Mapper.CreateMap<IBlogArticle, BlogArticle>();
             var articleModels = articles.Select(AutoMapper.Mapper.Map<BlogArticle>);
@@ -44,6 +46,27 @@ namespace Samson.Website.Controllers
             };
 
             return View("~/Views/Partials/BlogArticlesListingView.cshtml", model);
+        }
+
+        public ActionResult ShowBlogTagsListing()
+        {
+            var blogHub = _blogRepository.GetMainBlogHub();
+
+            if (blogHub == null)
+            {
+                // No blog?!?
+                return null;
+            }
+
+            var tags = _blogRepository.GetAllTags();
+
+            var model = new TagsModel
+            {
+                Tags = tags,
+                HubUrlWithTagQueryString = blogHub.Url + "?" + TagSearchQueryStringKey + "="
+            };
+
+            return View("~/Views/Partials/TagsListingView.cshtml", model);
         }
     }
 }

@@ -11,5 +11,7 @@
         T Retrieve<T>(string key) where T : class;
 
         bool Contains(string key);
+
+        void Clear();
     }
 }

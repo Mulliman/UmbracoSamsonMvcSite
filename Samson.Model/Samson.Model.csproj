@@ -190,6 +190,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Caching\HttpCacheBase.cs" />
     <Compile Include="Caching\SlidingHttpCache.cs" />
     <Compile Include="Caching\HttpCache.cs" />
     <Compile Include="Caching\ICache.cs" />

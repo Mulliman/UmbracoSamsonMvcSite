@@ -1,0 +1,17 @@
+﻿@model Samson.Website.Models.TagsModel
+
+@if (Model.Tags.Any())
+{ 
+    <h3>Tags</h3>
+    
+    <ul>
+        @foreach(var item in Model.Tags)
+        {
+            <li>
+                <a href="@(Model.HubUrlWithTagQueryString + item)">
+                    @item
+                </a>
+            </li>
+        }
+    </ul>
+}

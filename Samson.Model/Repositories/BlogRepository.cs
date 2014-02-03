@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Samson.Model.Caching;
 using Samson.Model.DocumentTypes;
 using Samson.Model.DocumentTypes.Interfaces;
 using Samson.Model.Repositories.Interfaces;
@@ -10,17 +11,52 @@ namespace Samson.Model.Repositories
     public class BlogRepository : IBlogRepository
     {
         private readonly IStrongContentService _strongContentService;
+        private readonly ICache _cache;
 
-        public BlogRepository(IStrongContentService strongContentService)
+        public BlogRepository(IStrongContentService strongContentService, ICache cache)
         {
             _strongContentService = strongContentService;
+            _cache = cache;
+        }
+
+        public IBlogHub GetMainBlogHub()
+        {
+            const string cachingKey = "Blog.MainHub";
+
+            if (_cache.Contains(cachingKey))
+            {
+                return _cache.Retrieve<IBlogHub>(cachingKey);
+            }
+
+            var root = _strongContentService.GetRootNodes().First();
+
+            var blogHub = _strongContentService.GetChildNodes<IBlogHub>(root).FirstOrDefault();
+
+            blogHub = blogHub ?? _strongContentService.GetDescendantNodes<IBlogHub>(root).FirstOrDefault();
+
+            if (blogHub != null)
+            {
+                _cache.Add(cachingKey, blogHub);
+            }
+            
+            return blogHub;
         }
 
         public IEnumerable<IBlogArticle> GetAllBlogArticles()
         {
+            const string cachingKey = "Blog.AllArticles";
+
+            if (_cache.Contains(cachingKey))
+            {
+                return _cache.Retrieve<IEnumerable<IBlogArticle>>(cachingKey);
+            }
+
             var root = _strongContentService.GetRootNodes().First();
 
-            return _strongContentService.GetDescendantNodes<IBlogArticle>(root);
+            var articles = _strongContentService.GetDescendantNodes<IBlogArticle>(root);
+
+            _cache.Add(cachingKey, articles);
+            return articles;
         }
 
         public IEnumerable<IBlogArticle> GetAllBlogArticles(Sorting.Interfaces.ISorter sorter)
@@ -136,6 +172,40 @@ namespace Samson.Model.Repositories
             var sortedNodes = sorter.Sort(nodes);
 
             return nodes.Where(b => b.Tags.Contains(tag)).Skip(startIndex).Take(pageSize);
+        }
+
+        public IEnumerable<string> GetAllTags()
+        {
+            const string cachingKey = "Blog.AllTags";
+
+            if (_cache.Contains(cachingKey))
+            {
+                return _cache.Retrieve<IEnumerable<string>>(cachingKey);
+            }
+
+            var articles = GetAllBlogArticles();
+
+            var tags = articles.SelectMany(a => a.Tags).Distinct();
+
+            _cache.Add(cachingKey, tags);
+            return tags;
+        }
+
+        public IEnumerable<string> GetAllTags(int parentNodeId)
+        {
+            string cachingKey = string.Format("Blog.AllTags.{0}", parentNodeId);
+
+            if (_cache.Contains(cachingKey))
+            {
+                return _cache.Retrieve<IEnumerable<string>>(cachingKey);
+            }
+
+            var articles = GetAllBlogArticles(parentNodeId);
+
+            var tags = articles.SelectMany(a => a.Tags).Distinct();
+
+            _cache.Add(cachingKey, tags);
+            return tags;
         }
     }
 }
